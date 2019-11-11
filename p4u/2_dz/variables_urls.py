@@ -8,19 +8,9 @@ description = "Watch Netflix movies & TV shows online or stream right to" \
 h1 = "All of Netflix"
 keyword = "Netflix"
 
-len(title.split())
-len(title)
-title.count(keyword)
+
 title_percentage = title.count(keyword) / len(title.split()) * 100
-
-len(description.split())
-len(description)
-description.count(keyword)
 description_percentage = description.count(keyword) / len(description.split()) * 100
-
-len(h1.split())
-len(h1)
-h1.count(keyword)
 h1_percentage = h1.count(keyword) / len(h1.split()) * 100
 
 url_result = {"URL": url}
