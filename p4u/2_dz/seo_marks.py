@@ -2,14 +2,27 @@ from pprint import pprint
 from requests_html import HTMLSession
 from collections import Counter
 import collections
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 
 
-#url = input("Enter url: ")
-#keyword = input("Enter keyword: ")
+#
+# url = input("Enter url: ")
+# keyword = input("Enter keyword: ")
+def validate(url):
+    govno = False
+    while not govno:
+        val = URLValidator()
+        try:
+            govno = val(url)
+            return url
+        except Exception as e:
+            govno = False
+            url = input("Re-Enter url: ")
 
-url = "https://netflix.com"
-keyword = "Netflix"
 
+url = validate(input("Enter url: "))
+keyword = input("Enter keyword: ")
 
 with HTMLSession() as session:
     resp = session.get(url)
@@ -19,13 +32,13 @@ description = resp.html.xpath('//meta [@name="description"]/@content')
 h1 = resp.html.xpath('//h1/text()')
 h2 = resp.html.xpath('//h2/text()')
 
-print('*'*20, 'title', '*'*20)
+print('*' * 20, 'title', '*' * 20)
 pprint(title)
-print('*'*20, 'description', '*'*20)
+print('*' * 20, 'description', '*' * 20)
 pprint(description)
-print('*'*20, 'H1', '*'*20)
+print('*' * 20, 'H1', '*' * 20)
 pprint(h1)
-print('*'*50)
+print('*' * 50)
 
 title_words = len(title.split())
 title_symbols = len(title)
@@ -78,5 +91,3 @@ for i in range(h1_number):
         print("H1 grade: " + str(round(final_h1_grade)))
     elif str(h1_grade):
         print("H1 grade: " + str(round(h1_grade)))
-
-
