@@ -6,7 +6,11 @@ import collections
 # не зрозумів логіки як визначити заспамленість та щільність тексту
 
 
-url = input("Enter url: ")
+#url = input("Enter url: ")
+#keyword = input("Enter keyword: ")
+
+url = "https://netflix.com"
+keyword = "Netflix"
 
 with HTMLSession() as session:
     resp = session.get(url)
