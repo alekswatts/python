@@ -3,14 +3,10 @@ from requests_html import HTMLSession
 from collections import Counter
 import collections
 
-# не зрозумів логіки як визначити заспамленість та щільність тексту
 
 
-#url = input("Enter url: ")
-#keyword = input("Enter keyword: ")
+url = input("Enter url: ")
 
-url = "https://netflix.com"
-keyword = "Netflix"
 
 with HTMLSession() as session:
     resp = session.get(url)
