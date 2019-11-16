@@ -13,8 +13,6 @@ with HTMLSession() as session:
 
 title = resp.html.xpath('//title')[0].text
 description = resp.html.xpath('//meta[@name="description"]/@content')
-keyword = "Netflix"
-
 
 print('*'*20, 'title', '*'*20)
 pprint(title)
