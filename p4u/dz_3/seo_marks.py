@@ -91,3 +91,5 @@ for i in range(h1_number):
         print("H1 grade: " + str(round(final_h1_grade)))
     elif str(h1_grade):
         print("H1 grade: " + str(round(h1_grade)))
+
+# приколюха з h2 в процесі
