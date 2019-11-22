@@ -3,14 +3,13 @@ from requests_html import HTMLSession
 from datetime import date
 from time import time, sleep
 
-domain = 'py4you.com'
+domain = 'netflix.com'
 t1 = time()
-count = 0
 
 parsed_date = date.today().isoformat()
 
 # Взял из файла все ключи
-with open('keys.txt', 'r', encoding='utf-8') as f1:
+with open('all.txt', 'r', encoding='utf-8') as f1:
     keywords = {line.strip() for line in f1}
 
 # Взял из файла все УЖЕ ОТСКАНИРОВАННЫЕ ключи
@@ -35,7 +34,7 @@ for key in (keywords - keywords_parsed):
 
             links = resp.html.xpath('//div[@class="r"]/a[1]/@href')
             found = 'not_found'
-
+            print(links)
             with open('keys_parsed.txt', 'a', encoding='utf-8') as f3:
                 f3.write(key + '\n')
 
