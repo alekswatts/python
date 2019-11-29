@@ -40,10 +40,11 @@ class SearchEngine(Website):
                 print(f'Position for keyword: {keyword} ({domain}) is {position}')
 
 
-py4you = Website('https://py4you.com/')
+py4you = Website.links('https://py4you.com/')
 
 rozetka = Website('https://py4you.com/')
 
 moyo = Shop('https://moyo.ua/')
 
 google = SearchEngine('https://google.com.ua/')
+
