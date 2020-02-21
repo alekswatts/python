@@ -11,7 +11,7 @@ def jerking_parser():
     filename = domain.replace('.', '_') + '.csv'
 
     result_file = open(filename, 'w', encoding='utf-8')
-    result_file.write('URL\tIMG\n')
+    result_file.write('URL\n')
 
     parsed_urls, queue_urls = set(), dict()
 
@@ -35,15 +35,10 @@ def jerking_parser():
             t1 = time()
             response = session.get(url)
             t2 = time()
-        try:
-            parsed_body = html.fromstring(response.text)
-            img = parsed_body.xpath('//img/@src')[0].text
-        except Exception as e:
-            img = 'Not found'
 
         response_time = round(t2 - t1, 2)
 
-        result = f'{url}\t{img}\n'
+        result = f'{url}\n'
 
         result_file.write(result)
 
@@ -52,7 +47,7 @@ def jerking_parser():
                 link = link.split('#')[0]
                 continue
 
-            if link.endswith('.xml'):
+            if not link.endswith('.html'):
                 continue
 
             if domain not in link:

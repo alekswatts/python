@@ -25,5 +25,8 @@ def send_text(message, *args):
     elif message.text == 'Я все':
         bot.send_message(message.chat.id, 'Прощай, надеюсь тебе понравилось!')
 
+
 print('Turned on')
+
+
 bot.polling()
