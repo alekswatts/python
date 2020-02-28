@@ -4,14 +4,14 @@ import urllib.request
 from bs4 import BeautifulSoup
 
 filename = open('stardevine_com.csv', 'r', encoding='utf-8')
-
 file = filename.read()
+file = file.split()
+file.pop(0)
+file.pop(0)
 
-print(file)
 
-
-def image_collect():
-    html_page = urllib.request.urlopen("http://stardevine.com/580-sheri-vi.html")
+def image_collect(page):
+    html_page = urllib.request.urlopen(page)
     soup = BeautifulSoup(html_page, "lxml")
     for link in soup.findAll('a'):
         href = link.get('href')
@@ -19,7 +19,19 @@ def image_collect():
             continue
         if href.endswith('.com/'):
             continue
-        print(href)
+        final_result = list()
+        final_result.append(href)
+        print(final_result)
 
 
-image_collect()
+final_result = list()
+for page in file:
+    final_result.append(image_collect(page))
+
+
+
+
+
+
+
+

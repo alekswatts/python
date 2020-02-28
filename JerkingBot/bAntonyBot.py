@@ -12,7 +12,8 @@ def start_message(message):
     bot.send_message(message.chat.id, 'Ну что, пришло время вздрочнуть?', reply_markup=keyboard1)
 
 
-link = 'https://image.winudf.com/v2/image/Y29tLmludGVuc2UucHViMS5ob3Rhc2dfc2NyZWVuXzFfaHZjaGlud3M/screen-1.jpg?fakeurl=1&type=.jpg'
+link = 'https://image.winudf.com/v2/image/Y29tLmludGVuc2UucHViMS5ob3Rhc2dfc2NyZWVuXzFfaHZjaGlud3M/screen-1.jpg' \
+       '?fakeurl=1&type=.jpg '
 
 
 @bot.message_handler(content_types=['text'])
