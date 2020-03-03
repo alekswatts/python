@@ -1,7 +1,7 @@
 import os
 import telebot
 
-bot = telebot.TeleBot('1053298773:AAH-hnRFYsE4NNzQ0LUGkiu3V6IRXKismlk')
+bot = telebot.TeleBot('***')
 
 keyboard1 = telebot.types.ReplyKeyboardMarkup()
 keyboard1.row('Начнем', 'Я все')
