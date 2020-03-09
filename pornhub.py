@@ -40,4 +40,6 @@ def crawler():
             print(type(e), e)
 
 
+crawler()
+
 
