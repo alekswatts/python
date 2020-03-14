@@ -1,8 +1,11 @@
 from time import time
 from requests_html import HTMLSession
+from reppy.robots import Robots
 
 domain = 'py4you.com'
 home_url = f'https://{domain}/'
+robots_url = home_url + 'robots.txt'
+robots = Robots.fetch(robots_url)
 
 filename = domain.replace('.', '_') + '.csv'
 
@@ -60,6 +63,10 @@ while len(queue_urls) > 0:
 
         if link in parsed_urls:
             continue
+
+        if not robots.allowed(link, '*'):
+            continue
+
         if link not in queue_urls:
             queue_urls[link] = level + 1
 
