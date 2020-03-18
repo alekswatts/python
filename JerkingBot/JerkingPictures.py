@@ -1,12 +1,10 @@
 from pprint import pprint
 import urllib.request
-
 from bs4 import BeautifulSoup
 
 filename = open('stardevine_com.csv', 'r', encoding='utf-8')
 file = filename.read()
 file = file.split()
-file.pop(0)
 file.pop(0)
 
 
