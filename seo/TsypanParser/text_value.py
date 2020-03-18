@@ -1,3 +1,4 @@
+from pprint import pprint
 from seo.TsypanParser.web_parser import *
 
 
@@ -14,9 +15,15 @@ def text_value(parsed_links):
             except Exception as e:
                 print(type(e), e)
 
+        h1 = response.html.xpath('//h1/text()')
+        h2 = response.html.xpath('//h2/text()')
+        h3 = response.html.xpath('//h3/text()')
+        h4 = response.html.xpath('//h4/text()')
+        h5 = response.html.xpath('//h5/text()')
+        heading = h1+h2+h3+h4+h5
         paragraph = response.html.xpath('//p/text()')
-        print(paragraph)
-        print(len(paragraph))
+        print(heading)
+        pprint(paragraph)
 
 
 text_value(parsed_links)
