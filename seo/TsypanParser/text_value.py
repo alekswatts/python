@@ -22,8 +22,8 @@ def text_value(parsed_links):
         h5 = response.html.xpath('//h5/text()')
         heading = h1+h2+h3+h4+h5
         paragraph = response.html.xpath('//p/text()')
-        print(heading)
-        pprint(paragraph)
+        full_content = heading + paragraph
+        pprint(full_content)
 
 
 text_value(parsed_links)
