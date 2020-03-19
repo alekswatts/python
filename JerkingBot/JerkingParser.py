@@ -7,12 +7,11 @@ from urllib.parse import urljoin
 
 def jerking_parser():
     domain = 'stardevine.com'
-    home_url = f'http://{domain}/'
+    home_url = f'http://{domain}/porno-aktrisy/'
 
-    filename = domain.replace('.', '_') + '.csv'
+    filename = domain.replace('.', '_') + '.json'
 
     result_file = open(filename, 'w', encoding='utf-8')
-    result_file.write('URL\n')
 
     parsed_urls, queue_urls = set(), dict()
 

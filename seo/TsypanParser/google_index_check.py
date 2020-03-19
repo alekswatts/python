@@ -21,4 +21,5 @@ def google_index_status(parsed_links):
                 found = 'Banned by Google'
 
 
+
 google_index_status(parsed_links)
