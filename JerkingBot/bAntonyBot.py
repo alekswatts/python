@@ -26,7 +26,7 @@ def send_text(message):
     if message.text == 'Начнем':
         bot.send_message(message.chat.id, 'Чего желаешь?')
     elif message.text == 'Бабу хочу':
-        with open('result.json', 'r', encoding='utf-8') as file:
+        with open('results.json', 'r', encoding='utf-8') as file:
             filecont = json.load(file)
             nubies = random.choice(filecont)
             bot.send_photo(message.chat.id, "".join(nubies))
@@ -39,7 +39,7 @@ def send_text(message):
 
 
 print('Turned on')
-with open('result.json', 'r', encoding='utf-8') as file:
+with open('results.json', 'r', encoding='utf-8') as file:
     file = json.load(file)
     test = random.choice(file)
 
