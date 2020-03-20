@@ -20,16 +20,16 @@ link = "https://scontent-waw1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/p640x6
        "&_nc_ohc=8bG42sfmqPoAX_u63NW&oh=6bd6e8d37dbffaf5bb74f2d9767b751d&oe=5E9D7481 "
 
 
+
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     if message.text == 'Начнем':
         bot.send_message(message.chat.id, 'Чего желаешь?')
     elif message.text == 'Бабу хочу':
-        with open('results.json', 'r', encoding='utf-8') as file:
+        with open('result.json', 'r', encoding='utf-8') as file:
             filecont = json.load(file)
             nubies = random.choice(filecont)
             bot.send_photo(message.chat.id, "".join(nubies))
-            print(test)
     elif message.text == 'Надю хочу':
         bot.send_message(message.chat.id, 'Щя, будет тебе Надя!')
         time.sleep(2)
@@ -39,10 +39,9 @@ def send_text(message):
 
 
 print('Turned on')
-with open('results.json', 'r', encoding='utf-8') as file:
+with open('result.json', 'r', encoding='utf-8') as file:
     file = json.load(file)
     test = random.choice(file)
-    print(test)
 
 
 bot.polling()
