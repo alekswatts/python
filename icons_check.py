@@ -1,6 +1,6 @@
 import os
 
-path = r'C:\\Users\User\Google Диск\SEO Work\cfw\games'
+path = r'full path'
 
 with open('results.csv', 'w', encoding='utf-8') as f:
     f.write(f'icon\n')
