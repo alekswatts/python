@@ -6,7 +6,11 @@
       <excludeFolder url="file://$MODULE_DIR$/env" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.8 (python) (2)" jdkType="Python SDK" />
+=======
+    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+>>>>>>> 82f7fe094cf87a9a6fe7da5aa19f100b0d393e8a
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
