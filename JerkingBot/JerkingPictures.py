@@ -4,7 +4,7 @@ import json
 import re
 
 
-filename = open('stardevine_com.json', 'r', encoding='utf-8')
+filename = open('xuk_life.csv', 'r', encoding='utf-8')
 file = filename.read()
 file = file.split()
 file.pop(0)
@@ -13,6 +13,7 @@ file.pop(0)
 def image_collect(page):
     html_page = urllib.request.urlopen(page)
     soup = BeautifulSoup(html_page, "lxml")
+    print(soup)
     #final_result = list()
     for link in soup.find_all('a'):
         href = link.get('href')
@@ -22,6 +23,7 @@ def image_collect(page):
             continue
         final_result.append(href)
         print('Collecting links. Please, wait. ')
+
     return final_result
 
 
