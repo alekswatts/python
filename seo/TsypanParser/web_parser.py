@@ -2,7 +2,7 @@ from requests_html import HTMLSession
 import requests
 import time
 
-domain = 'https://py4you.com'
+domain = 'https://kasynohex.com/'
 
 
 def parser(domain):
