@@ -2,7 +2,7 @@ from time import time
 from requests_html import HTMLSession
 from reppy.robots import Robots
 
-domain = 'py4you.com'
+domain = 'askgamblers.com'
 home_url = f'https://{domain}/'
 robots_url = home_url + 'robots.txt'
 robots = Robots.fetch(robots_url)
