@@ -7,7 +7,7 @@ with open('links.csv', 'r', encoding='utf-8') as f:
 
         for link in f:
             link = link.strip()
-            key = 'site:' + link + ' ' + 'casino'
+            key = 'site: ' + link + ' ' + 'casino'
 
             print(f'Send request for key: [{key}]')
 
