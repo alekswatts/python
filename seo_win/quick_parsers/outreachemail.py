@@ -3,8 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 
-username = 'seoteamlime@gmail.com'
-password = 'DDamntasty3337777'
+username = '***'
+password = '***'
 
 
 class OutReachEmail():
