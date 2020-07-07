@@ -1,6 +1,7 @@
 import re
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from bs4 import BeautifulSoup, NavigableString
 from time import sleep
 
 username = '***'
@@ -15,8 +16,10 @@ class OutReachEmail():
     def login(self):
         self.driver.get('https://ninjaoutreach.com')
 
-        button = self.driver.find_element_by_xpath('//*[@id="primary_manu_influencers"]/div/div/div[3]/a[2]')
+        button = self.driver.find_element_by_xpath('//*[@id="primary_manu_influencers"]/div/div/div[3]/a[1]')
         button.click()
+
+        sleep(1)
 
         email_in = self.driver.find_element_by_xpath('//*[@id="Email"]')
         email_in.send_keys(username)
@@ -37,13 +40,19 @@ class OutReachEmail():
         final_page = self.driver.find_element_by_xpath('//*[@id="njo-body"]/div[2]/div[1]/div[1]/div[1]/ul/li[2]/a/span')
         final_page.click()
 
-        self.driver.implicitly_wait(10)
-
-        doc = self.driver.page_source
-        emails = re.findall(r'[\w\.-]+@[\w\.-]+', doc)
-
+        # self.driver.implicitly_wait(10)
+        #
+        # doc = self.driver.page_source
+        # emails = re.findall(r'[\w\.-]+@[\w\.-]+', doc)
+        #
+        # for email in emails:
+        #     print(email)
+        sleep(5)
+        soup = BeautifulSoup(self.driver.page_source, features='html.parser')
+        sleep(2)
+        emails = soup.find_all('a', {'class': 'email no-overflow'})
         for email in emails:
-            print(email)
+            print(email.get('href'))
 
 
 launch = OutReachEmail()
