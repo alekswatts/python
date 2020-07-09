@@ -4,8 +4,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, NavigableString
 from time import sleep
 
-username = '***'
-password = '***'
+username = 'seoteamlime@gmail.com'
+password = 'DDamntasty3337777'
 
 
 class OutReachEmail():
