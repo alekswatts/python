@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Casino Parser.iml" filepath="$PROJECT_DIR$/.idea/Casino Parser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SEO_CMS/.idea/SEO_CMS.iml" filepath="$PROJECT_DIR$/SEO_CMS/.idea/SEO_CMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/../p4u/.idea/p4u.iml" filepath="$PROJECT_DIR$/../p4u/.idea/p4u.iml" />
     </modules>
   </component>
